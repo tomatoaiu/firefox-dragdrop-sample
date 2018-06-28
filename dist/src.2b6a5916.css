@@ -1,0 +1,14 @@
+
+#draggable[data-v-1f9731] {
+  width: 200px;
+  height: 20px;
+  text-align: center;
+  background: white;
+}
+.dropzone[data-v-1f9731] {
+  width: 200px;
+  height: 20px;
+  background: blueviolet;
+  margin-bottom: 10px;
+  padding: 10px;
+}
