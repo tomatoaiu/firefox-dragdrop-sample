@@ -10003,7 +10003,7 @@ function getOuterHTML(el) {
 Vue.compile = compileToFunctions;
 
 exports.default = Vue;
-},{}],19:[function(require,module,exports) {
+},{}],20:[function(require,module,exports) {
 var bundleURL = null;
 function getBundleURLCached() {
   if (!bundleURL) {
@@ -10033,7 +10033,7 @@ function getBaseURL(url) {
 
 exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
-},{}],18:[function(require,module,exports) {
+},{}],16:[function(require,module,exports) {
 var bundle = require('./bundle-url');
 
 function updateLink(link) {
@@ -10064,7 +10064,7 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":19}],14:[function(require,module,exports) {
+},{"./bundle-url":20}],17:[function(require,module,exports) {
 var Vue // late bind
 var version
 var map = (window.__VUE_HOT_MAP__ = Object.create(null))
@@ -10306,7 +10306,7 @@ exports.reload = tryWrap(function (id, options) {
   })
 })
 
-},{}],12:[function(require,module,exports) {
+},{}],14:[function(require,module,exports) {
 var global = arguments[3];
 'use strict';
 
@@ -17588,7 +17588,7 @@ if (inBrowser) {
 
 exports.default = Vue;
 },{}],6:[function(require,module,exports) {
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -17607,13 +17607,51 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
-  name: 'App',
+  name: "App",
   methods: {
+    mouseover: function mouseover(event, content) {
+      event.target.style.background = "blue";
+    },
+    mouseleave: function mouseleave(event, content) {
+      event.target.style.background = "blueviolet";
+    },
     dragstart: function dragstart(event, content) {
       console.log(event, content);
-      event.dataTransfer.setData('text/plain', null);
+      event.dataTransfer.setData("text/plain", null);
       this.target = event.target;
     },
     dragend: function dragend(event, content) {
@@ -17651,65 +17689,318 @@ exports.default = {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("main", [
-    _c("div", { staticClass: "dropzone" }, [
+    _c("div", { staticClass: "left" }, [
+      _c("div", { staticClass: "dropzone" }, [
+        _c(
+          "div",
+          {
+            attrs: { id: "draggable", draggable: "true" },
+            on: {
+              dragstart: function($event) {
+                _vm.dragstart($event)
+              }
+            }
+          },
+          [_vm._v("\n        This div is draggable\n      ")]
+        )
+      ]),
+      _vm._v(" "),
       _c(
         "div",
         {
-          attrs: { id: "draggable", draggable: "true" },
+          staticClass: "dropzone dropzone-big",
           on: {
-            dragstart: function($event) {
-              _vm.dragstart($event)
+            dragover: function($event) {
+              _vm.dragover($event)
+            },
+            dragleave: function($event) {
+              _vm.dragleave($event)
+            },
+            dragenter: function($event) {
+              _vm.dragenter($event)
             }
           }
         },
-        [_vm._v("\n      This div is draggable\n    ")]
+        [
+          _c("div", {
+            staticClass: "dropzone",
+            on: {
+              dragover: function($event) {
+                _vm.dragover($event)
+              },
+              dragleave: function($event) {
+                _vm.dragleave($event)
+              },
+              dragenter: function($event) {
+                _vm.dragenter($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "dropzone",
+            on: {
+              dragover: function($event) {
+                _vm.dragover($event)
+              },
+              dragleave: function($event) {
+                _vm.dragleave($event)
+              },
+              dragenter: function($event) {
+                _vm.dragenter($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "dropzone",
+            on: {
+              dragover: function($event) {
+                _vm.dragover($event)
+              },
+              dragleave: function($event) {
+                _vm.dragleave($event)
+              },
+              dragenter: function($event) {
+                _vm.dragenter($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "dropzone",
+            on: {
+              dragover: function($event) {
+                _vm.dragover($event)
+              },
+              dragleave: function($event) {
+                _vm.dragleave($event)
+              },
+              dragenter: function($event) {
+                _vm.dragenter($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "dropzone  dropzone-big",
+              on: {
+                dragover: function($event) {
+                  _vm.dragover($event)
+                },
+                dragleave: function($event) {
+                  _vm.dragleave($event)
+                },
+                dragenter: function($event) {
+                  _vm.dragenter($event)
+                }
+              }
+            },
+            [
+              _c("div", {
+                staticClass: "dropzone",
+                on: {
+                  dragover: function($event) {
+                    _vm.dragover($event)
+                  },
+                  dragleave: function($event) {
+                    _vm.dragleave($event)
+                  },
+                  dragenter: function($event) {
+                    _vm.dragenter($event)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "dropzone",
+                on: {
+                  dragover: function($event) {
+                    _vm.dragover($event)
+                  },
+                  dragleave: function($event) {
+                    _vm.dragleave($event)
+                  },
+                  dragenter: function($event) {
+                    _vm.dragenter($event)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "dropzone  dropzone-big",
+                  on: {
+                    dragover: function($event) {
+                      _vm.dragover($event)
+                    },
+                    dragleave: function($event) {
+                      _vm.dragleave($event)
+                    },
+                    dragenter: function($event) {
+                      _vm.dragenter($event)
+                    }
+                  }
+                },
+                [
+                  _c("div", {
+                    staticClass: "dropzone",
+                    on: {
+                      dragover: function($event) {
+                        _vm.dragover($event)
+                      },
+                      dragleave: function($event) {
+                        _vm.dragleave($event)
+                      },
+                      dragenter: function($event) {
+                        _vm.dragenter($event)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", {
+                    staticClass: "dropzone",
+                    on: {
+                      dragover: function($event) {
+                        _vm.dragover($event)
+                      },
+                      dragleave: function($event) {
+                        _vm.dragleave($event)
+                      },
+                      dragenter: function($event) {
+                        _vm.dragenter($event)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "dropzone text",
+                      on: {
+                        dragover: function($event) {
+                          _vm.dragover($event)
+                        },
+                        dragleave: function($event) {
+                          _vm.dragleave($event)
+                        },
+                        dragenter: function($event) {
+                          _vm.dragenter($event)
+                        }
+                      }
+                    },
+                    [
+                      _vm._v(
+                        "\n            一番上のdomのdragoberが働く\n            firefixではここに書いてある文字の上にカーソルがくると、dragoverの状態にならない\n          "
+                      )
+                    ]
+                  )
+                ]
+              )
+            ]
+          )
+        ]
       )
     ]),
     _vm._v(" "),
-    _c("div", {
-      staticClass: "dropzone",
-      on: {
-        dragover: function($event) {
-          _vm.dragover($event)
-        },
-        dragleave: function($event) {
-          _vm.dragleave($event)
-        },
-        dragenter: function($event) {
-          _vm.dragenter($event)
+    _c("div", { staticClass: "left" }, [
+      _c("div", {
+        staticClass: "dropzone",
+        on: {
+          mouseover: function($event) {
+            _vm.mouseover($event)
+          },
+          mouseleave: function($event) {
+            _vm.mouseleave($event)
+          }
         }
-      }
-    }),
-    _vm._v(" "),
-    _c("div", {
-      staticClass: "dropzone",
-      on: {
-        dragover: function($event) {
-          _vm.dragover($event)
+      }),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          staticClass: "dropzone  dropzone-big",
+          on: {
+            mouseover: function($event) {
+              _vm.mouseover($event)
+            },
+            mouseleave: function($event) {
+              _vm.mouseleave($event)
+            }
+          }
         },
-        dragleave: function($event) {
-          _vm.dragleave($event)
-        },
-        dragenter: function($event) {
-          _vm.dragenter($event)
-        }
-      }
-    }),
-    _vm._v(" "),
-    _c("div", {
-      staticClass: "dropzone",
-      on: {
-        dragover: function($event) {
-          _vm.dragover($event)
-        },
-        dragleave: function($event) {
-          _vm.dragleave($event)
-        },
-        dragenter: function($event) {
-          _vm.dragenter($event)
-        }
-      }
-    })
+        [
+          _c("div", {
+            staticClass: "dropzone",
+            on: {
+              mouseover: function($event) {
+                _vm.mouseover($event)
+              },
+              mouseleave: function($event) {
+                _vm.mouseleave($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "dropzone",
+            on: {
+              mouseover: function($event) {
+                _vm.mouseover($event)
+              },
+              mouseleave: function($event) {
+                _vm.mouseleave($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "dropzone text yoko",
+              on: {
+                mouseover: function($event) {
+                  _vm.mouseover($event)
+                },
+                mouseleave: function($event) {
+                  _vm.mouseleave($event)
+                }
+              }
+            },
+            [
+              _vm._v(
+                "\n        mouseoverは全てのdomに対して働く\n        firefixではここに書いてある文字の上にカーソルがきてもover状態になる\n      "
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "dropzone text yoko",
+              on: {
+                mouseover: function($event) {
+                  $event.preventDefault()
+                  _vm.mouseover($event)
+                },
+                mouseleave: function($event) {
+                  $event.preventDefault()
+                  _vm.mouseleave($event)
+                }
+              }
+            },
+            [
+              _vm._v(
+                "\n        mouseoverは全てのdomに対して働く\n        firefixではここに書いてある文字の上にカーソルがきてもover状態になる\n      "
+              )
+            ]
+          )
+        ]
+      )
+    ])
   ])
 }
 var staticRenderFns = []
@@ -17745,7 +18036,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":18,"vue-hot-reload-api":14,"vue":12}],4:[function(require,module,exports) {
+},{"_css_loader":16,"vue-hot-reload-api":17,"vue":14}],4:[function(require,module,exports) {
 'use strict';
 
 var _vueEsm = require('vue/dist/vue.esm.js');
@@ -17764,7 +18055,7 @@ new _vueEsm2.default({
         return h(_index2.default);
     }
 });
-},{"vue/dist/vue.esm.js":8,"./index.vue":6}],9:[function(require,module,exports) {
+},{"vue/dist/vue.esm.js":8,"./index.vue":6}],22:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -17793,7 +18084,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '51138' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '54257' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -17934,5 +18225,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[9,4], null)
+},{}]},{},[22,4], null)
 //# sourceMappingURL=/src.2b6a5916.map
