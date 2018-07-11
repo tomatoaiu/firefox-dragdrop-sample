@@ -17637,8 +17637,6 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
-//
-//
 
 exports.default = {
   name: "App",
@@ -17972,7 +17970,7 @@ exports.default = {
             },
             [
               _vm._v(
-                "\n        mouseoverは全てのdomに対して働く\n        firefixではここに書いてある文字の上にカーソルがきてもover状態になる\n      "
+                "\n        firefixではここに書いてある文字の上にカーソルがきてもover状態になる\n      "
               )
             ]
           ),
@@ -17994,7 +17992,7 @@ exports.default = {
             },
             [
               _vm._v(
-                "\n        mouseoverは全てのdomに対して働く\n        firefixではここに書いてある文字の上にカーソルがきてもover状態になる\n      "
+                "\n        firefixではここに書いてある文字の上にカーソルがきてもover状態になる\n      "
               )
             ]
           )

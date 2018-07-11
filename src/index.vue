@@ -32,11 +32,9 @@
         <div class="dropzone" @mouseover="mouseover($event)" @mouseleave="mouseleave($event)"></div>
         <div class="dropzone" @mouseover="mouseover($event)" @mouseleave="mouseleave($event)"></div>
         <div class="dropzone text yoko" @mouseover="mouseover($event)" @mouseleave="mouseleave($event)">
-          mouseoverは全てのdomに対して働く
           firefixではここに書いてある文字の上にカーソルがきてもover状態になる
         </div>
         <div class="dropzone text yoko" @mouseover.prevent="mouseover($event)" @mouseleave.prevent="mouseleave($event)">
-          mouseoverは全てのdomに対して働く
           firefixではここに書いてある文字の上にカーソルがきてもover状態になる
         </div>
       </div>
