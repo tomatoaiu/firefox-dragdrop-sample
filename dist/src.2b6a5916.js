@@ -17637,6 +17637,13 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
   name: "App",
@@ -17648,9 +17655,9 @@ exports.default = {
       event.target.style.background = "blueviolet";
     },
     dragstart: function dragstart(event, content) {
-      console.log(event, content);
+      // console.log(event, content);
       event.dataTransfer.setData("text/plain", null);
-      this.target = event.target;
+      // this.target = event.target;
     },
     dragend: function dragend(event, content) {
       // console.log(event, content)
@@ -17658,18 +17665,20 @@ exports.default = {
     },
     dragover: function dragover(event, content) {
       // console.log(event, content)
-      // event.target.style.background = "red";
+      event.target.style.background = "red";
     },
     dragenter: function dragenter(event, content) {
-      console.log(event, content);
+      // console.log(event, content);
       event.target.style.background = "blue";
     },
     dragleave: function dragleave(event, content) {
-      console.log(event, content);
+      // console.log(event, content);
       event.target.style.background = "blueviolet";
     },
     drag: function drag(event, content) {
       // console.log(event, content)
+      console.log(event.offsetX);
+      console.log(event.offsetY);
       // firefox not emit clientX and Y by drag
     }
   }
@@ -17694,8 +17703,13 @@ exports.default = {
           {
             attrs: { id: "draggable", draggable: "true" },
             on: {
-              dragstart: function($event) {
-                _vm.dragstart($event)
+              drag: function($event) {
+                $event.preventDefault()
+                _vm.drag($event)
+              },
+              dragover: function($event) {
+                $event.preventDefault()
+                _vm.dragover($event)
               }
             }
           },
@@ -17709,12 +17723,15 @@ exports.default = {
           staticClass: "dropzone dropzone-big",
           on: {
             dragover: function($event) {
+              $event.preventDefault()
               _vm.dragover($event)
             },
             dragleave: function($event) {
+              $event.preventDefault()
               _vm.dragleave($event)
             },
             dragenter: function($event) {
+              $event.preventDefault()
               _vm.dragenter($event)
             }
           }
@@ -17724,12 +17741,15 @@ exports.default = {
             staticClass: "dropzone",
             on: {
               dragover: function($event) {
+                $event.preventDefault()
                 _vm.dragover($event)
               },
               dragleave: function($event) {
+                $event.preventDefault()
                 _vm.dragleave($event)
               },
               dragenter: function($event) {
+                $event.preventDefault()
                 _vm.dragenter($event)
               }
             }
@@ -17739,12 +17759,15 @@ exports.default = {
             staticClass: "dropzone",
             on: {
               dragover: function($event) {
+                $event.preventDefault()
                 _vm.dragover($event)
               },
               dragleave: function($event) {
+                $event.preventDefault()
                 _vm.dragleave($event)
               },
               dragenter: function($event) {
+                $event.preventDefault()
                 _vm.dragenter($event)
               }
             }
@@ -17754,12 +17777,15 @@ exports.default = {
             staticClass: "dropzone",
             on: {
               dragover: function($event) {
+                $event.preventDefault()
                 _vm.dragover($event)
               },
               dragleave: function($event) {
+                $event.preventDefault()
                 _vm.dragleave($event)
               },
               dragenter: function($event) {
+                $event.preventDefault()
                 _vm.dragenter($event)
               }
             }
@@ -17769,12 +17795,15 @@ exports.default = {
             staticClass: "dropzone",
             on: {
               dragover: function($event) {
+                $event.preventDefault()
                 _vm.dragover($event)
               },
               dragleave: function($event) {
+                $event.preventDefault()
                 _vm.dragleave($event)
               },
               dragenter: function($event) {
+                $event.preventDefault()
                 _vm.dragenter($event)
               }
             }
@@ -17786,12 +17815,15 @@ exports.default = {
               staticClass: "dropzone  dropzone-big",
               on: {
                 dragover: function($event) {
+                  $event.preventDefault()
                   _vm.dragover($event)
                 },
                 dragleave: function($event) {
+                  $event.preventDefault()
                   _vm.dragleave($event)
                 },
                 dragenter: function($event) {
+                  $event.preventDefault()
                   _vm.dragenter($event)
                 }
               }
@@ -17801,12 +17833,15 @@ exports.default = {
                 staticClass: "dropzone",
                 on: {
                   dragover: function($event) {
+                    $event.preventDefault()
                     _vm.dragover($event)
                   },
                   dragleave: function($event) {
+                    $event.preventDefault()
                     _vm.dragleave($event)
                   },
                   dragenter: function($event) {
+                    $event.preventDefault()
                     _vm.dragenter($event)
                   }
                 }
@@ -17816,12 +17851,15 @@ exports.default = {
                 staticClass: "dropzone",
                 on: {
                   dragover: function($event) {
+                    $event.preventDefault()
                     _vm.dragover($event)
                   },
                   dragleave: function($event) {
+                    $event.preventDefault()
                     _vm.dragleave($event)
                   },
                   dragenter: function($event) {
+                    $event.preventDefault()
                     _vm.dragenter($event)
                   }
                 }
@@ -17833,12 +17871,15 @@ exports.default = {
                   staticClass: "dropzone  dropzone-big",
                   on: {
                     dragover: function($event) {
+                      $event.preventDefault()
                       _vm.dragover($event)
                     },
                     dragleave: function($event) {
+                      $event.preventDefault()
                       _vm.dragleave($event)
                     },
                     dragenter: function($event) {
+                      $event.preventDefault()
                       _vm.dragenter($event)
                     }
                   }
@@ -17848,12 +17889,15 @@ exports.default = {
                     staticClass: "dropzone",
                     on: {
                       dragover: function($event) {
+                        $event.preventDefault()
                         _vm.dragover($event)
                       },
                       dragleave: function($event) {
+                        $event.preventDefault()
                         _vm.dragleave($event)
                       },
                       dragenter: function($event) {
+                        $event.preventDefault()
                         _vm.dragenter($event)
                       }
                     }
@@ -17863,12 +17907,15 @@ exports.default = {
                     staticClass: "dropzone",
                     on: {
                       dragover: function($event) {
+                        $event.preventDefault()
                         _vm.dragover($event)
                       },
                       dragleave: function($event) {
+                        $event.preventDefault()
                         _vm.dragleave($event)
                       },
                       dragenter: function($event) {
+                        $event.preventDefault()
                         _vm.dragenter($event)
                       }
                     }
@@ -17880,12 +17927,15 @@ exports.default = {
                       staticClass: "dropzone text",
                       on: {
                         dragover: function($event) {
+                          $event.preventDefault()
                           _vm.dragover($event)
                         },
                         dragleave: function($event) {
+                          $event.preventDefault()
                           _vm.dragleave($event)
                         },
                         dragenter: function($event) {
+                          $event.preventDefault()
                           _vm.dragenter($event)
                         }
                       }
@@ -18082,7 +18132,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '54257' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52681' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

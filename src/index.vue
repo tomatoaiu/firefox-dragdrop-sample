@@ -3,22 +3,29 @@
     <div class="left">
       <div class="dropzone">
         <div id="draggable" draggable="true" 
-          @dragstart="dragstart($event)">
+          @drag.prevent="drag($event)"
+          @dragover.prevent="dragover($event)">
           This div is draggable
         </div>
+        <!-- <div id="draggable" draggable="true" 
+          @drag.prevent="drag($event)"
+          @dragstart.prevent="dragstart($event)"
+          @dragover.prevent="dragover($event)">
+          This div is draggable
+        </div> -->
       </div>
-      <div class="dropzone dropzone-big" @dragover="dragover($event)" @dragleave="dragleave($event)" @dragenter="dragenter($event)">
-        <div class="dropzone" @dragover="dragover($event)" @dragleave="dragleave($event)" @dragenter="dragenter($event)"></div>
-        <div class="dropzone" @dragover="dragover($event)" @dragleave="dragleave($event)" @dragenter="dragenter($event)"></div>
-        <div class="dropzone" @dragover="dragover($event)" @dragleave="dragleave($event)" @dragenter="dragenter($event)"></div>
-        <div class="dropzone" @dragover="dragover($event)" @dragleave="dragleave($event)" @dragenter="dragenter($event)"></div>
-        <div class="dropzone  dropzone-big" @dragover="dragover($event)" @dragleave="dragleave($event)" @dragenter="dragenter($event)">
-          <div class="dropzone" @dragover="dragover($event)" @dragleave="dragleave($event)" @dragenter="dragenter($event)"></div>
-          <div class="dropzone" @dragover="dragover($event)" @dragleave="dragleave($event)" @dragenter="dragenter($event)"></div>
-          <div class="dropzone  dropzone-big" @dragover="dragover($event)" @dragleave="dragleave($event)" @dragenter="dragenter($event)">
-            <div class="dropzone" @dragover="dragover($event)" @dragleave="dragleave($event)" @dragenter="dragenter($event)"></div>
-            <div class="dropzone" @dragover="dragover($event)" @dragleave="dragleave($event)" @dragenter="dragenter($event)"></div>
-            <div class="dropzone text" @dragover="dragover($event)" @dragleave="dragleave($event)" @dragenter="dragenter($event)">
+      <div class="dropzone dropzone-big" @dragover.prevent="dragover($event)" @dragleave.prevent="dragleave($event)" @dragenter.prevent="dragenter($event)">
+        <div class="dropzone" @dragover.prevent="dragover($event)" @dragleave.prevent="dragleave($event)" @dragenter.prevent="dragenter($event)"></div>
+        <div class="dropzone" @dragover.prevent="dragover($event)" @dragleave.prevent="dragleave($event)" @dragenter.prevent="dragenter($event)"></div>
+        <div class="dropzone" @dragover.prevent="dragover($event)" @dragleave.prevent="dragleave($event)" @dragenter.prevent="dragenter($event)"></div>
+        <div class="dropzone" @dragover.prevent="dragover($event)" @dragleave.prevent="dragleave($event)" @dragenter.prevent="dragenter($event)"></div>
+        <div class="dropzone  dropzone-big" @dragover.prevent="dragover($event)" @dragleave.prevent="dragleave($event)" @dragenter.prevent="dragenter($event)">
+          <div class="dropzone" @dragover.prevent="dragover($event)" @dragleave.prevent="dragleave($event)" @dragenter.prevent="dragenter($event)"></div>
+          <div class="dropzone" @dragover.prevent="dragover($event)" @dragleave.prevent="dragleave($event)" @dragenter.prevent="dragenter($event)"></div>
+          <div class="dropzone  dropzone-big" @dragover.prevent="dragover($event)" @dragleave.prevent="dragleave($event)" @dragenter.prevent="dragenter($event)">
+            <div class="dropzone" @dragover.prevent="dragover($event)" @dragleave.prevent="dragleave($event)" @dragenter.prevent="dragenter($event)"></div>
+            <div class="dropzone" @dragover.prevent="dragover($event)" @dragleave.prevent="dragleave($event)" @dragenter.prevent="dragenter($event)"></div>
+            <div class="dropzone text" @dragover.prevent="dragover($event)" @dragleave.prevent="dragleave($event)" @dragenter.prevent="dragenter($event)">
               一番上のdomのdragoberが働く
               firefixではここに書いてある文字の上にカーソルがくると、dragoverの状態にならない
             </div>
@@ -54,9 +61,9 @@ export default {
       event.target.style.background = "blueviolet";
     },
     dragstart(event, content) {
-      console.log(event, content);
+      // console.log(event, content);
       event.dataTransfer.setData("text/plain", null);
-      this.target = event.target;
+      // this.target = event.target;
     },
     dragend(event, content) {
       // console.log(event, content)
@@ -64,18 +71,20 @@ export default {
     },
     dragover(event, content) {
       // console.log(event, content)
-      // event.target.style.background = "red";
+      event.target.style.background = "red";
     },
     dragenter(event, content) {
-      console.log(event, content);
+      // console.log(event, content);
       event.target.style.background = "blue";
     },
     dragleave(event, content) {
-      console.log(event, content);
+      // console.log(event, content);
       event.target.style.background = "blueviolet";
     },
     drag(event, content) {
       // console.log(event, content)
+      console.log(event.offsetX)
+      console.log(event.offsetY)
       // firefox not emit clientX and Y by drag
     }
   }
